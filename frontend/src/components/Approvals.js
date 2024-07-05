@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import axios from 'axios';
- // Import your CSS file
 
 function Approvals({ signer }) {
   const [electionID, setElectionID] = useState('');
@@ -13,7 +12,7 @@ function Approvals({ signer }) {
       const message = "Admin";
       const signature = await signer.signMessage(message);
 
-      const response = await axios.get(`http://localhost:5000/api/unapproved`, {
+      const response = await axios.get(`https://blockchain-based-online-voting-system-1.onrender.com/api/unapproved`, {
         params: { electionID, signature }
       });
       setUnapprovedRegistrations(response.data);
@@ -28,7 +27,7 @@ function Approvals({ signer }) {
       const message = "Admin";
       const signature = await signer.signMessage(message);
 
-      const response = await axios.get(`http://localhost:5000/api/unapproved-candidates`, {
+      const response = await axios.get(`https://blockchain-based-online-voting-system-1.onrender.com/api/unapproved-candidates`, {
         params: { electionID, signature }
       });
       setUnapprovedCandidates(response.data);
@@ -43,7 +42,7 @@ function Approvals({ signer }) {
     const signature = await signer.signMessage(message);
 
     try {
-      const response = await axios.post(`http://localhost:5000/api/approve`, {
+      const response = await axios.post(`https://blockchain-based-online-voting-system-1.onrender.com/api/approve`, {
         address,
         id,
         electionID,
@@ -67,7 +66,7 @@ function Approvals({ signer }) {
     const signature = await signer.signMessage(message);
 
     try {
-      const response = await axios.post(`http://localhost:5000/api/approve-candidate`, {
+      const response = await axios.post(`https://blockchain-based-online-voting-system-1.onrender.com/api/approve-candidate`, {
         address,
         id,
         electionID,

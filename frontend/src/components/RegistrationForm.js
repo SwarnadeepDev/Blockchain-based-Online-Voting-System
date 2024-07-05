@@ -15,7 +15,7 @@ function RegistrationForm({ updateElections, signer, elections, contract }) {
       try {
         const message = "user";
         const signature = await signer.signMessage(message);
-        const response = await axios.post('http://localhost:5000/api/register', { address, id, electionID: PremId ,signature});
+        const response = await axios.post('https://blockchain-based-online-voting-system-1.onrender.com/api/register', { address, id, electionID: PremId ,signature});
         if (response.status === 201) {
           alert('Data submitted for approval.');
         } else {
@@ -33,7 +33,7 @@ function RegistrationForm({ updateElections, signer, elections, contract }) {
   // Function to check approval status
   const checkApprovalStatus = async () => {
     try {
-      const response = await axios.get(`http://localhost:5000/api/check-approval`, {
+      const response = await axios.get(`https://blockchain-based-online-voting-system-1.onrender.com/api/check-approval`, {
         params: { address, id, electionID: PremId }
       });
       if (response.data.approved) {
@@ -121,5 +121,3 @@ function RegistrationForm({ updateElections, signer, elections, contract }) {
 }
 
 export default RegistrationForm;
-
-
