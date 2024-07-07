@@ -6,7 +6,7 @@ function SidebarContent() {
       <div className="sidebar-content">
         <div className="sidebar">
           <div className="uppericons">
-            <div className="common"><Link to="/connectwallet"><i className="fa-solid fa-wallet"></i></Link></div>
+            <div className="common"><Link to="/"><i className="fa-solid fa-wallet"></i></Link></div>
             <div className="common"><Link to="/election"><i class="fas fa-home"></i></Link></div>
             <div className="common"><Link to="/dashboard"><i class="fa-solid fa-tv"></i></Link></div>
           </div>

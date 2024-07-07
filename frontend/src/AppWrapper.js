@@ -120,7 +120,8 @@ function AppWrapper() {
                     element: <ElectionCreation state={state} elections={elections} updateElections={updateElections} connected={connected} />
                 },
                 {
-                    path: "connectwallet",
+                    index : true,
+                    // path: "connectwallet",
                     element: <Connectwallet updateSetState={updateSetState} updateConnected={updateConnected} connected={connected} updateElections={updateElections} />,
                 },
                 {
